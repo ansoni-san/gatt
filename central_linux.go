@@ -401,9 +401,9 @@ func (c *central) handleWrite(reqType byte, b []byte) []byte {
 	}
 
 	// CCC/descriptor write
-	if len(value) != 2 {
-		return attErrorRsp(reqType, h, AttEcodeInvalAttrValueLen)
-	}
+	//if len(value) != 2 {
+		//return attErrorRsp(reqType, h, AttEcodeInvalAttrValueLen)
+	//}
 	ccc := binary.LittleEndian.Uint16(value)
 	// char := a.pvt.(*Descriptor).char
 	if ccc&(gattCCCNotifyFlag|gattCCCIndicateFlag) != 0 {
